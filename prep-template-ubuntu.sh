@@ -13,8 +13,8 @@ cat /dev/null > /var/log/wtmp
 cat /dev/null > /var/log/lastlog
 rm -rf /tmp/*
 rm -rf /var/tmp/*
-rm –rf /etc/ssh/*key*
-rm –rf ~/.ssh/authorized_keys
+rm -rf /etc/ssh/*key*
+rm -rf ~/.ssh/authorized_keys
 cat > /etc/network/interfaces << EOF
 auto lo
 iface lo inet loopback
@@ -42,6 +42,7 @@ EOF
 chage -d 0 root
 passwd -d root
 
-history -c
-history -w
-echo "Delete this script and then poweroff."
+echo "Delete this script and run:"
+echo "history -c"
+echo "history -w"
+echo "poweroff"
