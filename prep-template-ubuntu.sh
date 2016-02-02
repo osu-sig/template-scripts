@@ -21,11 +21,11 @@ iface lo inet loopback
 
 #allow-hotplug eth0
 #iface eth0 inet static
-    #address 128.193.15.22
-    #netmask 255.255.255.128
-    #gateway 128.193.15.1
+    #address 
+    #netmask 
+    #gateway 
     # dns-* options are implemented by the resolvconf package, if installed
-    #dns-nameservers 128.193.15.12 128.193.15.13
+    #dns-nameservers 
 EOF
 
 cat /dev/null > /etc/hostname
