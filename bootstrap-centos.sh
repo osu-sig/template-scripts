@@ -57,6 +57,10 @@ echo $SHORTNAME > /etc/hostname
 
 ifup $IFACENAME
 
+# clear machine-id and regenerate a new one
+rm -f /etc/machine-id
+systemd-machine-id-setup
+
 mkdir /root/.ssh
 chmod 0700 /root/.ssh
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKNr5x9CttPmNd/sAOxWHfNvnGqDQR+ms110S277rZp1yqnZndh/NEJG2x63FJoCvXwebq+tRRY6zgvyhspIVNr4bfAaUzzm+0e69zcVCCHbzmt5YMZ2qJd+DT4QTRaJOy1FGvkfS9cd7sevmJfmx6EU49ebtgIqZWS9tFp1hB7LwyMDYTCYTYcICrSj1emGrkT6pyA6q/DdtDau7tIAP6SFD7oFPYlE8bswsySKkiI8DQ27QvaOtXLo4Pa/Fo0s10c+b9wJ/wf9PT7I1FnUpD6uxACuEYkino/pSEl3fg8o8dIogoAFWq682gXabQmSpHTQzgSID9dbFripv8as4T ansible@ansible-vd01.sig.oregonstate.edu" > /root/.ssh/authorized_keys
