@@ -46,7 +46,7 @@ EOF
 
 echo $SHORTNAME > /etc/hostname
 
-ifup $IFACENAME
+netplan apply
 
 dpkg-reconfigure openssh-server
 
