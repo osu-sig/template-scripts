@@ -3,8 +3,6 @@
 # based on:
 # http://www.virtxpert.com/preparing-ubuntu-template-virtual-machines/
 
-# apt-get install open-vm-tools python-minimal aptitude
-
 systemctl stop rsyslog.service
 systemctl  stop audit.service
 apt purge cloud-init && sudo apt autoremove
@@ -22,6 +20,8 @@ rm -rf /etc/ssh/*key*
 rm -rf ~/.ssh/authorized_keys
 rm -rf /etc/netplan/00*
 cat /dev/null > /etc/hostname
+
+sed -i 's/^ENABLED=.*/ENABLED=0/' /etc/default/motd-news
 
 cat > /etc/hosts << EOF
 127.0.0.1   localhost
