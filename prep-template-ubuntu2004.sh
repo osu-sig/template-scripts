@@ -4,14 +4,12 @@
 # http://www.virtxpert.com/preparing-ubuntu-template-virtual-machines/
 
 systemctl stop rsyslog.service
-systemctl  stop audit.service
 apt purge cloud-init && sudo apt autoremove
 rm -rf /etc/cloud
 apt-get clean
 logrotate -f /etc/logrotate.conf
 find /var/log -name "*.gz" -type f -delete
 find /var/log -name "*.1" -type f -delete
-cat /dev/null > /var/log/audit/audit.log
 cat /dev/null > /var/log/wtmp
 cat /dev/null > /var/log/lastlog
 rm -rf /tmp/*
